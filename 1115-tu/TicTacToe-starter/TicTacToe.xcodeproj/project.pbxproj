@@ -18,6 +18,7 @@
 		55CE6E751DA557440095A0CF /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CE6E741DA557440095A0CF /* Player.swift */; };
 		55CE6E771DA557510095A0CF /* Field.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CE6E761DA557510095A0CF /* Field.swift */; };
 		55CE6E791DA557C60095A0CF /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CE6E781DA557C60095A0CF /* Board.swift */; };
+		C94128381DDB9B9D00AE0FF9 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94128371DDB9B9D00AE0FF9 /* TableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		55CE6E761DA557510095A0CF /* Field.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Field.swift; path = Model/Field.swift; sourceTree = "<group>"; };
 		55CE6E781DA557C60095A0CF /* Board.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Board.swift; path = Model/Board.swift; sourceTree = "<group>"; };
 		64FCB1FED9D5FD13FB8470B8 /* Pods-TicTacToe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TicTacToe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TicTacToe/Pods-TicTacToe.debug.xcconfig"; sourceTree = "<group>"; };
+		C94128371DDB9B9D00AE0FF9 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		E1D57739215A91385D214030 /* Pods-TicTacToe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TicTacToe.release.xcconfig"; path = "Pods/Target Support Files/Pods-TicTacToe/Pods-TicTacToe.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,6 +86,7 @@
 				55CE6E6D1DA5526A0095A0CF /* Model */,
 				559526F41DA4A79D0052F944 /* AppDelegate.swift */,
 				559526F61DA4A79D0052F944 /* ViewController.swift */,
+				C94128371DDB9B9D00AE0FF9 /* TableViewController.swift */,
 				559526F81DA4A79D0052F944 /* Main.storyboard */,
 				559526FB1DA4A79D0052F944 /* Assets.xcassets */,
 				559526FD1DA4A79D0052F944 /* LaunchScreen.storyboard */,
@@ -245,6 +248,7 @@
 				559526F71DA4A79D0052F944 /* ViewController.swift in Sources */,
 				55CE6E701DA552A00095A0CF /* BoardView.swift in Sources */,
 				559526F51DA4A79D0052F944 /* AppDelegate.swift in Sources */,
+				C94128381DDB9B9D00AE0FF9 /* TableViewController.swift in Sources */,
 				55CE6E751DA557440095A0CF /* Player.swift in Sources */,
 				55CE6E791DA557C60095A0CF /* Board.swift in Sources */,
 				55CE6E771DA557510095A0CF /* Field.swift in Sources */,

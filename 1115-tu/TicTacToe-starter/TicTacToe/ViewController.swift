@@ -19,6 +19,8 @@ class ViewController: UIViewController, BoardViewDelegate {
   
   private var disposeBag = DisposeBag()
   
+  var addBoard: ((Board) -> ())?
+  
   
   // MARK: View controller lifecycle
   
@@ -64,7 +66,9 @@ class ViewController: UIViewController, BoardViewDelegate {
     boardView.isUserInteractionEnabled = true
     currentTurnLabel.text = board.value.name(for: board.value.playerWithCurrentTurn())
   }
-
+  
+  @IBAction func unwindToList(segue: UIStoryboardSegue) {
+  }
 
   
   // MARK: Helpers
