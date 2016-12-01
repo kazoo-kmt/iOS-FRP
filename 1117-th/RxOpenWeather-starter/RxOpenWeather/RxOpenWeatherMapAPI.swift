@@ -15,10 +15,35 @@ class RxOpenWeatherMapAPI {
   // MARK: Public API
   
   func createWeatherObservable(for city: String, temperatureUnit: RxOpenWeatherMapAPI.TemperatureUnit = .fahrenheit) -> Observable<Weather?> {
-    return Observable<Weather?>.just(nil) // just make the compiler happy by creating a default Observable that's always nil
+    
+    guard let url = buildURLForCurrentWeather(for: city, temperatureUnit: temperatureUnit) else {
+      print(#function, "Fail to build URL")
+      return Observable<Weather?>.just(nil)
+    }
+    
+    let jsonObservable: Observable<Any> = URLSession.shared.rx.json(url: url)
+    let weatherInfoObservable: Observable<[String: Any]?> = jsonObservable.map { (json: Any) in
+      return json as? [String: Any]
+    }
+    let weatherObservable: Observable<Weather?> = weatherInfoObservable.map { (weatherInfo: [String: Any]?) -> Weather? in
+      if let weatherInfo = weatherInfo {
+        return self.jsonToMaybeWeather(weatherInfo: weatherInfo)
+      } else {
+        return nil
+      }
+    }
+    
+    return weatherObservable
+      .observeOn(MainScheduler.instance)  // To allow to use in VC in main thread
+      .catchErrorJustReturn(nil)
+
+    
+//    let weatherObservable: Observable<Weather?> = URLSession.shared.rx.json(url: url).map { (json: Any) in
+//      return (json as? [String: Any])
+//    }.map(jsonToMaybeWeather)
   }
 
-  
+
   // MARK: Build URLS
   
   fileprivate func buildURLForCurrentWeather(for city: String, temperatureUnit: RxOpenWeatherMapAPI.TemperatureUnit) -> URL? {
